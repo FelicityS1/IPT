@@ -1,56 +1,123 @@
+* {
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+/* Body */
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
-    background-color: #f4f4f4;
-    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, #93d7ff, #2c75e2);
 }
 
-.container {
+/* Main container */
+.main-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Left Section Logo */
+.logo-container {
+    width: 50vw; /* Occupies Left Section */
+    background: linear-gradient(to right, #ddf0fc, #62bef3); /* Ensure gradient blue background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-container img {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+}
+
+/* Right Section Login Input */
+.form-container {
+    flex: 1; /* Occupies Right Section */
     background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    width: 100%;
 }
 
-h2 {
-    margin-bottom: 20px;
+/* Form fields */
+form {
+    width: 100%;
+    max-width: 500px; /* Increase the form width */
 }
 
-label {
-    display: block;
-    text-align: left;
-    margin: 10px 0 5px;
+.form-group {
+    width: 100%;
+    max-width: 500px; /* Increase Credentials Input Width */
+    margin-bottom: 18px;
 }
 
-input {
-    width: calc(100% - 20px);
-    padding: 8px;
-    margin-bottom: 10px;
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
-button {
-    background-color: #ee5757;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+/* Labels */
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+/* Form Title */
+h2 {
+    text-align: center;
+    margin-bottom: 70px;
+    color: rgba(0, 0, 0, 0.493);
+    font-weight: 500;
+}
+
+/* Login / Signup Button */
+.submit-btn {
     width: 100%;
+    max-width: 500px; 
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(to right, #42ace9, #3870c4);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-button:hover {
-    background-color: #000000;
+.submit-btn:hover {
+    background: #5789b8;
 }
 
-#response {
-    margin-top: 15px;
-    white-space: pre-wrap;
-    text-align: left;
+/* Responsive Design */
+@media (max-width: 900px) {
+    .main-container {
+        flex-direction: column;
+    }
+    
+    .logo-container {
+        width: 100%;
+        height: 30vh;
+    }
+
+    .form-container {
+        width: 100%;
+        height: 70vh;
+    }
+
+    form {
+        max-width: 90%; 
+    }
 }
